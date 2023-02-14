@@ -1,27 +1,41 @@
-import 'nextra-theme-blog/style.css'
-import Head from 'next/head'
+import Head from 'next/head';
+import { Global, css } from '@emotion/react';
+import { AuthProvider } from '@/contexts/AuthContext';
+import { useEffect } from "react";
+import '@/styles/styles.scss'
 
-import '../styles/main.css'
+function GlobalStyle({ children }) {
+  useEffect(() => {
+    require("bootstrap/dist/js/bootstrap.bundle.min.js");
+  }, []);
 
-export default function Nextra({ Component, pageProps }) {
   return (
     <>
       <Head>
-        <link
-          rel="alternate"
-          type="application/rss+xml"
-          title="RSS"
-          href="/feed.xml"
-        />
-        <link
-          rel="preload"
-          href="/fonts/Inter-roman.latin.var.woff2"
-          as="font"
-          type="font/woff2"
-          crossOrigin="anonymous"
-        />
+        <meta content="width=device-width, initial-scale=1" name="viewport" />
       </Head>
-      <Component {...pageProps} />
+      <Global
+        styles={css`
+          html {
+            scroll-behavior: smooth;
+          }
+          #__next {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+          }
+        `}
+      />
+      {children}
     </>
-  )
+  );
+}
+
+export default function App({ Component, pageProps }) {
+  return (
+    <AuthProvider>
+      <GlobalStyle />
+      <Component {...pageProps} />
+    </AuthProvider>
+  );
 }

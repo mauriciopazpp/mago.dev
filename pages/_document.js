@@ -1,31 +1,25 @@
-import { Html, Head, Main, NextScript } from 'next/document'
+/* eslint-disable @next/next/no-css-tags */
+import Document, { Html, Head, Main, NextScript } from 'next/document';
 
-export default function Document() {
-  const meta = {
-    title: 'mago.dev',
-    description: 'Learn how to cast new spells',
-    image: 'https://assets.vercel.com/image/upload/q_auto/front/vercel/dps.png'
+class MyDocument extends Document {
+  render() {
+    return (
+      <Html lang="en">
+        <Head>
+          <meta charSet="UTF-8" />
+          <meta content="IE=edge" httpEquiv="X-UA-Compatible" />
+          <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+            rel="stylesheet"
+          />
+        </Head>
+        <body>
+          <Main />
+          <NextScript />
+        </body>
+      </Html>
+    );
   }
-
-  return (
-    <Html lang="en">
-      <Head>
-        <meta name="robots" content="follow, index" />
-        <meta name="description" content={meta.description} />
-        <meta property="og:site_name" content={meta.title} />
-        <meta property="og:description" content={meta.description} />
-        <meta property="og:title" content={meta.title} />
-        <meta property="og:image" content={meta.image} />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:site" content="@yourname" />
-        <meta name="twitter:title" content={meta.title} />
-        <meta name="twitter:description" content={meta.description} />
-        <meta name="twitter:image" content={meta.image} />
-      </Head>
-      <body>
-        <Main />
-        <NextScript />
-      </body>
-    </Html>
-  )
 }
+
+export default MyDocument;

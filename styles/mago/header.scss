@@ -1,0 +1,21 @@
+.mago- {
+
+    &navbar-brand, &navbar-logo {
+        opacity: 1;
+        transition: 0.2s opacity ease-out;
+
+        &:hover {
+            opacity: 0.6;
+            transition: 0.2s opacity ease-in;
+        }
+    }
+
+    &navbar-brand {
+        display: flex;
+        align-items: center;
+    }
+
+    &navbar-logo {
+        margin-right: 10px;
+    }
+}

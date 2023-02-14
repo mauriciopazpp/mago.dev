@@ -1,0 +1,42 @@
+button {
+    &.btn {
+        &.btn- {
+            &primary {
+                border: $buttonBorder solid lighten($primary, 20%);
+            }
+
+            &success {
+                border: $buttonBorder solid lighten($success, 20%);
+            }
+
+            &info {
+                border: $buttonBorder solid lighten($info, 20%);
+            }
+
+            &warning {
+                border: $buttonBorder solid lighten($warning, 20%);
+            }
+
+            &danger {
+                border: $buttonBorder solid lighten($danger, 20%);
+            }
+
+            &primary, &success, &info, &warning, &danger {
+                color: white;
+
+                &:not(.btn-circle) {
+                    border-radius: 0;
+                }
+
+                &:active {
+                    color: white;
+                }
+
+                &[type="submit"] {
+                    padding-left: 30px;
+                    padding-right: 30px;
+                }
+            }
+        }
+    }
+}
