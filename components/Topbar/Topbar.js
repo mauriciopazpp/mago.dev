@@ -6,7 +6,7 @@ const rabbitImg = '/images/rabbit.png';
 function Topbar() {
   return (
     <>
-      <nav className="navbar navbar-light bg-dark">
+      <nav className="container-fluid navbar navbar-light bg-dark">
         <div className="container-fluid">
           <a className="navbar-brand mago-navbar-brand" href="#">
             <Image
