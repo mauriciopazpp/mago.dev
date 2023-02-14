@@ -1,6 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
 import useAuth from '@/hooks/useAuth';
-import Image from 'next/image'
 
 function SignIn() {
   const { signin, signout, user, loading } = useAuth();
