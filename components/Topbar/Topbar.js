@@ -3,7 +3,7 @@ import Image from 'next/image'
 const magoImg = '/images/magodev-light.png';
 const rabbitImg = '/images/rabbit.png';
 
-function Topbar() {
+function Topbar({ isMobile }) {
   return (
     <>
       <nav className="container-fluid navbar navbar-light bg-dark">

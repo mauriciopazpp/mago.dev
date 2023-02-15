@@ -1,3 +1,12 @@
 .mago- {
-    &sidebar {}
+    &sidebar {
+        left: 0;
+        transition: 0.3s left ease;
+        
+        &-hide {
+            position: absolute;
+            left: -156px;
+            transition: 0.3s left ease;
+        }
+    }
 }

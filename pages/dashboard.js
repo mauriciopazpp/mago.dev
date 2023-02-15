@@ -11,9 +11,6 @@ export default function Dashboard() {
       .then((response) => {
         setPosts(response)
       })
-      .then(() => {
-        console.log('state posts', posts);
-      })
       .catch((error) => {
         console.error(error)
       });

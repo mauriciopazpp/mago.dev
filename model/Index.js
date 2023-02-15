@@ -32,7 +32,7 @@ const getAll = async (table) => {
     if (!table) {
         console.error('Error, table not defined to fetch data.');
     }
-    const querySnapshot = await getDocs(collection(db, table));
+    const querySnapshot = await getDocs(collection(db, 'courses'));
         querySnapshot.forEach((doc) => {
         console.log('getAll', doc.id, " => ", doc.data());
     });
