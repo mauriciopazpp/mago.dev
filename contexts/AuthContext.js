@@ -1,6 +1,6 @@
 import Router from 'next/router';
 import { createContext, useState, useEffect } from 'react';
-import firebase from '@/lib/firebase';
+import { firebaseAuth, GoogleAuthProvider, getRedirectResult, signInWithPopup } from '@/lib/firebase';
 
 const AuthContext = createContext();
 
@@ -8,15 +8,14 @@ export function AuthProvider({ children }) {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(false);
   
-  const auth = firebase.auth();
-  const provider = new firebase.auth.GoogleAuthProvider();
-  provider.setCustomParameters({ prompt: "select_account" });
+  const provider = new GoogleAuthProvider();
 
   const signin = () => {
     try {
       setLoading(true);
-      auth.signInWithPopup(provider)
-        .then(() => {
+      signInWithPopup(firebaseAuth, provider)
+        .then((result) => {
+          setUser(result.user);
           Router.push('/dashboard');
         });
     } finally {
@@ -34,12 +33,6 @@ export function AuthProvider({ children }) {
       setLoading(false);
     }
   };
-
-  useEffect(() => {
-    firebase.auth().onAuthStateChanged(async (user) => {
-      setUser(user);
-    })
-  }, []);
 
   return (
     <AuthContext.Provider

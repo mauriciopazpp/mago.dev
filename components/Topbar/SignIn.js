@@ -3,7 +3,7 @@ import useAuth from '@/hooks/useAuth';
 
 function SignIn() {
   const { signin, signout, user, loading } = useAuth();
-console.log('user', user)
+
   return (
     <>
       {user?.displayName ? (
