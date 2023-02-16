@@ -1,0 +1,14 @@
+.container- {
+    &dashboard {
+        z-index: 80;
+        position: relative;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container- {
+        &dashboard {
+            padding: 0 180px;
+        }
+    }
+}

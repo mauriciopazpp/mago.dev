@@ -1,5 +1,6 @@
 .mago- {
     &sidebar {
+        z-index: 90;
         left: 0;
         transition: 0.3s left ease;
         
@@ -8,5 +9,13 @@
             left: -156px;
             transition: 0.3s left ease;
         }
+    }
+}
+
+.text-white-01 {
+    color: $white-01;
+
+    &:hover {
+        color: white
     }
 }

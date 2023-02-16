@@ -1,0 +1,27 @@
+.mago {
+    &-card {
+        backdrop-filter: blur(10px);
+        background: $black-glass;
+        border-radius: 0;
+        color: $white-01;
+        border-color: transparent;
+        transition: 0.2s opacity ease;
+
+        &:hover {
+            opacity: 0.8;
+            transition: 0.2s opacity ease;
+        }
+
+        .card {
+            border: none;
+        }
+
+        .card-text, .card-title {
+            color: $white-01;
+        }
+
+        &-class {
+            font-size: 12px;
+        }
+    }
+}

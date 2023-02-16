@@ -1,4 +1,11 @@
 .mago- {
+    &topbar {
+        border-bottom-color: #363636;
+        border-width: 1px;
+        border-style: solid;
+        border-top: 0;
+        z-index: 100;
+    }
 
     &navbar-brand, &navbar-logo {
         opacity: 1;
