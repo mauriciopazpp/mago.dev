@@ -2,7 +2,7 @@ import useAuth from '@/hooks/useAuth';
 
 function SignIn() {
   const { signin, signout, user, loading } = useAuth();
-  console.log('aa', { signin, signout, user, loading });
+
   return (
     <div>
       {user?.displayName ? (

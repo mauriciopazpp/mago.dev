@@ -25,6 +25,7 @@ export default function Dashboard({ courses }) {
           </div>
         </div>
         <div className="row">
+          <h5 className="text-white-01">Recents</h5>
           <RecentCurses courses={courses} />
         </div>
       </div>

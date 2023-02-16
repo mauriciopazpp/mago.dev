@@ -5,7 +5,7 @@ const img = 'https://picsum.photos/466/200?change=';
 
 function Post({ course }) {
   return (
-    <div className="mago-card card mb-3">
+    <div className="mago-card bg-dark card mb-3">
       <a className="text-decoration-none" href={`school/${course.id}`}>
         <div className="col">
           <div className="card">

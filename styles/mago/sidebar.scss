@@ -4,10 +4,38 @@
         left: 0;
         transition: 0.3s left ease;
         
+        li {
+            > a {
+                vertical-align: middle !important;
+                display: flex;
+                align-content: center;
+                align-items: center;
+                gap: 8px;
+    
+                > span {
+                    font-size: 14px;
+                }
+            }
+
+            > a.nav-link.user > span {
+                margin-top: 14px;
+                display: block;
+            }
+        }
+
         &-hide {
             position: absolute;
             left: -156px;
             transition: 0.3s left ease;
+        }
+
+        &-subtitle {
+            text-transform: uppercase;
+            color: #718096;
+            font-weight: 600;
+            font-size: 0.75rem;
+            margin: 20px 0;
+            display: block;
         }
     }
 }
