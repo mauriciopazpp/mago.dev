@@ -13,9 +13,15 @@ export default function Dashboard({ courses }) {
           <h4>About this website</h4>
           <div className="row">
             <div className="col-sm">
-              Hello there, I'm Mauricio Paz, the creator of this website that was built using pure Next.js in conjunction with Firebase. The exciting news is that it's open-source, which means that you can access and examine the source code by clicking here.
-            <p><a href="https://github.com/mauriciopazpp/mago.dev">https://github.com/mauriciopazpp/mago.dev</a></p>
-            Enjoy.
+              {`Hello there, I'm Mauricio Paz, the creator of this website
+               that was built using pure Next.js in conjunction with Firebase. 
+               The exciting news is that it's open-source, which means that you can access and examine the source code by clicking here.`}
+              <p>
+                <a href="https://github.com/mauriciopazpp/mago.dev">
+                  https://github.com/mauriciopazpp/mago.dev
+                </a>
+              </p>
+              Enjoy.
             </div>
           </div>
         </div>
