@@ -1,5 +1,5 @@
 import Router from 'next/router';
-import { createContext, useState, useMemo } from 'react';
+import { createContext, useState, useMemo, useEffect } from 'react';
 import {
   firebaseAuth,
   GoogleAuthProvider,
@@ -13,12 +13,18 @@ export function AuthProvider({ children }) {
   const [loading, setLoading] = useState(false);
   const provider = new GoogleAuthProvider();
 
+  useEffect(() => {
+    firebaseAuth.onAuthStateChanged(async (data) => {
+      setUser(data);
+    });
+  }, []);
+
   const signin = () => {
     try {
       setLoading(true);
       signInWithPopup(firebaseAuth, provider).then((result) => {
-        setUser(result.user);
         Router.push('/dashboard');
+        setUser(result.user);
       });
     } finally {
       setLoading(false);
@@ -29,6 +35,7 @@ export function AuthProvider({ children }) {
     try {
       firebaseAuth.signOut().then(() => {
         Router.push('/');
+        setUser(null);
       });
     } finally {
       setLoading(false);
