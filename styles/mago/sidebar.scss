@@ -45,3 +45,15 @@
         color: white
     }
 }
+
+@media (max-width: 1700px) {
+    .mago- {
+        &sidebar {
+            li {
+                > a.nav-link.user .email {
+                    font-size: 10px;
+                }
+            }
+        }
+    }
+}

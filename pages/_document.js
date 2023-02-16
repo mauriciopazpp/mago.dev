@@ -7,8 +7,10 @@ class MyDocument extends Document {
         <Head>
           <meta charSet="UTF-8" />
           <meta content="IE=edge" httpEquiv="X-UA-Compatible" />
+          <link rel="preconnect" href="https://fonts.googleapis.com" />
+          <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
           <link
-            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Martel+Sans:wght@200;300;400;600;700;800;900&display=swap"
             rel="stylesheet"
           />
         </Head>

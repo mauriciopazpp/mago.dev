@@ -27,8 +27,8 @@ function SignIn() {
             aria-labelledby="dropdownMenuButton2"
           >
             <li>
-              <a className="dropdown-item active" href="#">
-                Action
+              <a className="dropdown-item active" href="/dashboard">
+                Go to Dashboard
               </a>
             </li>
             <li>

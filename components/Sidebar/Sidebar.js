@@ -1,4 +1,4 @@
-import { House, CodeSquare, PersonCircle } from 'react-bootstrap-icons';
+import { House, CodeSquare, CardList } from 'react-bootstrap-icons';
 import Image from 'next/image';
 import useAuth from '@/hooks/useAuth';
 
@@ -35,7 +35,7 @@ function Sidebar({ children, isMobile }) {
                       <div>
                         <b>{user?.displayName}</b>
                       </div>
-                      <p>{user?.email}</p>
+                      <p className="email">{user?.email}</p>
                     </span>
                   </a>
                 </li>
@@ -43,9 +43,17 @@ function Sidebar({ children, isMobile }) {
                 <span />
               )}
               <li className="nav-item">
-                <a href="#" className="nav-link align-middle px-0">
+                <a href="/" className="nav-link align-middle px-0">
                   <House color="white" />{' '}
                   <span className="text-white-01 ms-1 d-sm-inline">Home</span>
+                </a>
+              </li>
+              <li className="nav-item">
+                <a href="/dashboard" className="nav-link align-middle px-0">
+                  <CardList color="white" />{' '}
+                  <span className="text-white-01 ms-1 d-sm-inline">
+                    Dashboard
+                  </span>
                 </a>
               </li>
               <li>
@@ -77,12 +85,6 @@ function Sidebar({ children, isMobile }) {
                     </a>
                   </li>
                 </ul>
-              </li>
-              <li>
-                <a href="#" className="nav-link px-0 align-middle">
-                  <PersonCircle color="white" />{' '}
-                  <span className="text-white-01 ms-1 d-sm-inline">Perfil</span>
-                </a>
               </li>
               <li>
                 <span className="mago-sidebar-subtitle">Instructors</span>

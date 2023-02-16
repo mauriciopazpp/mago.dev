@@ -11,10 +11,13 @@ export default function CourseDetails({ course }) {
 
   return (
     <Layout className="school">
-      <div>
-        <h1>{course.title}</h1>
-        <br />
-        <div dangerouslySetInnerHTML={{ __html: course.content }} />
+      <div className="row">
+        <div className="col-md-8 text-justify">
+          <h1 className="text-weight-600">{course.title}</h1>
+          <br />
+          <div dangerouslySetInnerHTML={{ __html: course.content }} />
+        </div>
+        <div className="col-md-8">batata</div>
       </div>
     </Layout>
   );

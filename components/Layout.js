@@ -12,7 +12,6 @@ function Layout({ children, className }) {
   useEffect(() => {
     addEventListener('resize', resize);
     resize();
-    console.log('isMobile', isMobile);
   });
 
   return (
