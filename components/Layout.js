@@ -6,12 +6,13 @@ function Layout({ children, className }) {
   const [isMobile, setMobile] = useState(false);
 
   const resize = () => {
-    setMobile(window.innerWidth <= 600);
+    setMobile(window.innerWidth <= 730);
   };
 
   useEffect(() => {
     addEventListener('resize', resize);
     resize();
+    console.log('isMobile', isMobile);
   });
 
   return (

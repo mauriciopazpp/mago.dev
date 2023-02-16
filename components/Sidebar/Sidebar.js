@@ -21,23 +21,27 @@ function Sidebar({ children, isMobile }) {
               className="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start"
               id="menu"
             >
-              <li className="nav-item">
-                <a href="#" className="nav-link align-middle px-0 user">
-                  <Image
-                    src={user?.photoURL}
-                    alt={user?.displayName}
-                    width={40}
-                    height={40}
-                    className="rounded-circle d-inline-block align-text-top"
-                  />
-                  <span className="text-white-01 ms-1 d-sm-inline">
-                    <div>
-                      <b>{user?.displayName}</b>
-                    </div>
-                    <p>{user?.email}</p>
-                  </span>
-                </a>
-              </li>
+              {user?.displayName ? (
+                <li className="nav-item">
+                  <a href="#" className="nav-link align-middle px-0 user">
+                    <Image
+                      src={user?.photoURL}
+                      alt={user?.displayName}
+                      width={40}
+                      height={40}
+                      className="rounded-circle d-inline-block align-text-top"
+                    />
+                    <span className="text-white-01 ms-1 d-sm-inline">
+                      <div>
+                        <b>{user?.displayName}</b>
+                      </div>
+                      <p>{user?.email}</p>
+                    </span>
+                  </a>
+                </li>
+              ) : (
+                <span />
+              )}
               <li className="nav-item">
                 <a href="#" className="nav-link align-middle px-0">
                   <House color="white" />{' '}

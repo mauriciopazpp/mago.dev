@@ -24,9 +24,7 @@
         }
 
         &-hide {
-            position: absolute;
-            left: -156px;
-            transition: 0.3s left ease;
+            display: none;
         }
 
         &-subtitle {

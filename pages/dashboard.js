@@ -16,7 +16,11 @@ export default function Dashboard({ courses }) {
                 that was built using pure Next.js in conjunction with Firebase. 
                 The exciting news is that it's open-source, which means that you can access and examine the source code by clicking here.`}
               <p>
-                <a href="https://github.com/mauriciopazpp/mago.dev">
+                <a
+                  href="https://github.com/mauriciopazpp/mago.dev"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   https://github.com/mauriciopazpp/mago.dev
                 </a>
               </p>
