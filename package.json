@@ -20,12 +20,14 @@
     "framer-motion": "^9.0.2",
     "next": "13.1.6",
     "prettier": "^2.8.4",
+    "prop-types": "^15.8.1",
     "react": "18.2.0",
     "react-bootstrap-icons": "^1.10.2",
     "react-dom": "18.2.0",
     "sass": "^1.58.1"
   },
   "devDependencies": {
+    "@types/bootstrap": "^5.2.6",
     "eslint": "^8.34.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-plugin-import": "^2.27.5",

@@ -13,7 +13,7 @@ export default function CourseDetails({ course }) {
     <Layout className="school">
       <div>
         <h1>{course.title}</h1>
-        <br/>
+        <br />
         <div dangerouslySetInnerHTML={{ __html: course.content }} />
       </div>
     </Layout>
@@ -35,7 +35,7 @@ export async function getStaticProps({ params }) {
 
   return {
     props: {
-      course
-    }
-  }
+      course,
+    },
+  };
 }

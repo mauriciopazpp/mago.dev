@@ -1,22 +1,20 @@
-import { db } from "@/lib/firebase";
-import { doc, collection, getDocs, getDoc } from "firebase/firestore";
-import 'firebase/firestore';
+import { doc, collection, getDocs, getDoc } from 'firebase/firestore';
+import { db } from '@/lib/firebase';
 
 const getById = async (id) => {
-    const docRef = doc(db, 'courses', id);
-    const course = await getDoc(docRef);
-    const courseData = course.data();
-    
-    if (course.exists()) {
-      return {
-        id: course.id,
-        title: courseData.post.title,
-        content: courseData.post.content,
-      };
-    } else {
-      console.log('No such document!');
-      return null;
-    }
+  const docRef = doc(db, 'courses', id);
+  const course = await getDoc(docRef);
+  const courseData = course.data();
+
+  if (course.exists()) {
+    return {
+      id: course.id,
+      title: courseData.post.title,
+      content: courseData.post.content,
+    };
+  }
+
+  return null;
 };
 
 const getAll = async () => {

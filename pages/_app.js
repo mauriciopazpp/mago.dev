@@ -1,12 +1,12 @@
 import Head from 'next/head';
 import { Global, css } from '@emotion/react';
+import { useEffect } from 'react';
 import { AuthProvider } from '@/contexts/AuthContext';
-import { useEffect } from "react";
-import '@/styles/styles.scss'
+import '@/styles/styles.scss';
 
 function GlobalStyle({ children }) {
   useEffect(() => {
-    require("bootstrap/dist/js/bootstrap.bundle.min.js");
+    require('bootstrap/dist/js/bootstrap.bundle.min.js');
   }, []);
 
   return (

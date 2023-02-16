@@ -15,7 +15,7 @@ export default function RecentCurses({ courses }) {
 }
 
 export async function getStaticProps() {
-  const courses = await getAll()
+  const courses = await getAll();
 
   return {
     props: {
