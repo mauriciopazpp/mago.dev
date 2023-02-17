@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import { ArrowRight } from 'react-bootstrap-icons';
+import { useEffect } from 'react';
 import Topbar from '@/components/Topbar/Topbar';
 import useAuth from '@/hooks/useAuth';
 import magoImg from '@/public/images/magodev-v3.png';
@@ -7,6 +8,10 @@ import togetherSvg from '@/public/images/together.svg';
 
 export default function Home() {
   const { signin, user, loading } = useAuth();
+
+  useEffect(() => {
+    document.title = 'Mago.dev';
+  }, []);
 
   return (
     <div className="home">

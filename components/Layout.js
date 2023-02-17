@@ -18,6 +18,10 @@ function Layout({ children, className }) {
     };
   }, []);
 
+  useEffect(() => {
+    document.title = 'Mago.dev';
+  }, []);
+
   return (
     <div className={className}>
       <Topbar isMobile={isMobile} />

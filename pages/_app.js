@@ -6,10 +6,7 @@ import '@/styles/styles.scss';
 
 function GlobalStyle({ children }) {
   useEffect(() => {
-    import('bootstrap/dist/js/bootstrap.bundle.min.js').then(() => {
-      // eslint-disable-next-line no-console
-      console.log('Bootstrap loaded');
-    });
+    import('bootstrap/dist/js/bootstrap.bundle.min.js');
   }, []);
 
   return (
