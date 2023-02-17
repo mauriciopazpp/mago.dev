@@ -69,7 +69,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className="home-sky">content</div>
+      <div className="home-sky container">content</div>
     </div>
   );
 }
