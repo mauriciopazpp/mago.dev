@@ -1,18 +1,22 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import Topbar from './Topbar/Topbar';
 import Sidebar from './Sidebar/Sidebar';
 
 function Layout({ children, className }) {
   const [isMobile, setMobile] = useState(false);
 
-  const resize = () => {
-    setMobile(window.innerWidth <= 730);
-  };
-
   useEffect(() => {
-    addEventListener('resize', resize);
+    const resize = () => {
+      setMobile(window.innerWidth <= 730);
+    };
+
+    window.addEventListener('resize', resize);
     resize();
-  });
+
+    return () => {
+      window.removeEventListener('resize', resize);
+    };
+  }, []);
 
   return (
     <div className={className}>
@@ -21,4 +25,5 @@ function Layout({ children, className }) {
     </div>
   );
 }
-export default Layout;
+
+export default React.memo(Layout);

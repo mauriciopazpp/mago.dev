@@ -1,12 +1,16 @@
+import React from 'react';
 import PropTypes from 'prop-types';
 import Image from 'next/image';
+import Link from 'next/link';
 
-const img = 'https://picsum.photos/466/200?change=';
-
-function Post({ course }) {
+function Post({ course, img }) {
   return (
     <div className="mago-card bg-dark card mb-3">
-      <a className="text-decoration-none" href={`school/${course.id}`}>
+      <Link
+        href={`school/${course.id}`}
+        passHref
+        className="text-decoration-none"
+      >
         <div className="col">
           <div className="card">
             <Image
@@ -30,7 +34,7 @@ function Post({ course }) {
             </div>
           </div>
         </div>
-      </a>
+      </Link>
     </div>
   );
 }
@@ -42,6 +46,7 @@ Post.propTypes = {
     description: PropTypes.string.isRequired,
     created_at: PropTypes.string.isRequired,
   }).isRequired,
+  img: PropTypes.string.isRequired,
 };
 
-export default Post;
+export default React.memo(Post);

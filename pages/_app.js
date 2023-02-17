@@ -1,12 +1,15 @@
+import React, { useEffect } from 'react';
 import Head from 'next/head';
 import { Global, css } from '@emotion/react';
-import { useEffect } from 'react';
 import { AuthProvider } from '@/contexts/AuthContext';
 import '@/styles/styles.scss';
 
 function GlobalStyle({ children }) {
   useEffect(() => {
-    require('bootstrap/dist/js/bootstrap.bundle.min.js');
+    import('bootstrap/dist/js/bootstrap.bundle.min.js').then(() => {
+      // eslint-disable-next-line no-console
+      console.log('Bootstrap loaded');
+    });
   }, []);
 
   return (
@@ -31,7 +34,7 @@ function GlobalStyle({ children }) {
   );
 }
 
-export default function App({ Component, pageProps }) {
+function App({ Component, pageProps }) {
   return (
     <AuthProvider>
       <GlobalStyle />
@@ -39,3 +42,5 @@ export default function App({ Component, pageProps }) {
     </AuthProvider>
   );
 }
+
+export default React.memo(App);

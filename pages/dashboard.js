@@ -1,6 +1,5 @@
-/* eslint-disable react/button-has-type */
 import Layout from '@/components/Layout';
-import RecentCurses, { getStaticProps } from '@/components/Courses/Courses';
+import RecentCourses, { getStaticProps } from '@/components/Courses/Courses';
 
 export { getStaticProps };
 
@@ -30,7 +29,7 @@ export default function Dashboard({ courses }) {
         </div>
         <div className="row">
           <h5 className="text-white-01">Recents</h5>
-          <RecentCurses courses={courses} />
+          <RecentCourses courses={courses} />
         </div>
       </div>
     </Layout>

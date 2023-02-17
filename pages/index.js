@@ -2,9 +2,8 @@ import Image from 'next/image';
 import { ArrowRight } from 'react-bootstrap-icons';
 import Topbar from '@/components/Topbar/Topbar';
 import useAuth from '@/hooks/useAuth';
-
-const magoImg = '/images/magodev-v3.png';
-const togetherSvg = '/images/together.svg';
+import magoImg from '@/public/images/magodev-v3.png';
+import togetherSvg from '@/public/images/together.svg';
 
 export default function Home() {
   const { signin, user, loading } = useAuth();
@@ -22,15 +21,12 @@ export default function Home() {
                 width={380}
                 height={70}
                 className="d-inline-block align-text-top"
+                loading="eager"
               />
               <h4 className="text-white">Magic at your fingertips!</h4>
               {user?.displayName ? (
                 <span>
-                  <a
-                    type="button"
-                    className="btn btn-info btn-lg btn-cta"
-                    href="/dashboard"
-                  >
+                  <a className="btn btn-info btn-lg btn-cta" href="/dashboard">
                     Welcome {user?.displayName}! <ArrowRight />
                   </a>
                 </span>
@@ -62,6 +58,7 @@ export default function Home() {
                 width={460}
                 height={300}
                 className="mago-navbar-logo d-inline-block align-text-top"
+                loading="eager"
               />
             </div>
           </div>

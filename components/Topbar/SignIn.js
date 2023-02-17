@@ -1,3 +1,4 @@
+import React from 'react';
 import useAuth from '@/hooks/useAuth';
 
 function SignIn() {
@@ -5,7 +6,7 @@ function SignIn() {
 
   return (
     <div>
-      {user?.displayName ? (
+      {user && user.displayName ? (
         <div className="dropdown">
           <button
             type="button"
@@ -15,8 +16,8 @@ function SignIn() {
             aria-expanded="false"
           >
             <img
-              src={user?.photoURL}
-              alt={user?.displayName}
+              src={user.photoURL}
+              alt={user.displayName}
               width={30}
               height={30}
               className="rounded-circle d-inline-block align-text-top"
@@ -53,11 +54,11 @@ function SignIn() {
         </div>
       ) : (
         <button type="button" className="btn btn-info" onClick={() => signin()}>
-          {loading === true ? <span>Loading</span> : <span>Sign In</span>}
+          {loading ? <span>Loading</span> : <span>Sign In</span>}
         </button>
       )}
     </div>
   );
 }
 
-export default SignIn;
+export default React.memo(SignIn);

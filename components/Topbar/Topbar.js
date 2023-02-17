@@ -1,10 +1,10 @@
+import React from 'react';
 import Image from 'next/image';
 import SignIn from '@/components/Topbar/SignIn';
+import magoImg from '@/public/images/magodev-light.png';
+import rabbitImg from '@/public/images/rabbit.png';
 
-const magoImg = '/images/magodev-light.png';
-const rabbitImg = '/images/rabbit.png';
-
-function Topbar({ page }) {
+function Topbar() {
   return (
     <nav className="mago-topbar container-fluid navbar navbar-light bg-dark">
       <div className="container-fluid">
@@ -16,15 +16,13 @@ function Topbar({ page }) {
             height={40}
             className="mago-navbar-logo d-inline-block align-text-top"
           />
-          {page !== 'home' ? (
-            <Image
-              src={magoImg}
-              alt="Go to homepage"
-              width={200}
-              height={40}
-              className="d-inline-block align-text-top"
-            />
-          ) : null}
+          <Image
+            src={magoImg}
+            alt="Go to homepage"
+            width={200}
+            height={40}
+            className="d-inline-block align-text-top"
+          />
         </a>
         <SignIn />
       </div>
@@ -32,4 +30,4 @@ function Topbar({ page }) {
   );
 }
 
-export default Topbar;
+export default React.memo(Topbar);

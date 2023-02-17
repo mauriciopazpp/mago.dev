@@ -13,42 +13,44 @@ export function AuthProvider({ children }) {
   const [loading, setLoading] = useState(false);
   const provider = new GoogleAuthProvider();
 
-  useEffect(() => {
-    firebaseAuth.onAuthStateChanged(async (data) => {
-      setUser(data);
-    });
-  }, []);
+  const setUserAndLoading = (userData, isLoading) => {
+    setUser(userData);
+    setLoading(isLoading);
+  };
 
-  const signin = () => {
+  const signin = async () => {
     try {
       setLoading(true);
-      signInWithPopup(firebaseAuth, provider).then((result) => {
-        Router.push('/dashboard');
-        setUser(result.user);
-      });
-    } finally {
-      setLoading(false);
+      const result = await signInWithPopup(firebaseAuth, provider);
+      Router.push('/dashboard');
+      setUserAndLoading(result.user, false);
+    } catch (error) {
+      setUserAndLoading(null, false);
+      throw new Error(error);
     }
   };
 
-  const signout = () => {
+  const signout = async () => {
     try {
-      firebaseAuth.signOut().then(() => {
-        Router.push('/');
-        setUser(null);
-      });
-    } finally {
-      setLoading(false);
+      await firebaseAuth.signOut();
+      Router.push('/');
+      setUserAndLoading(null, false);
+    } catch (error) {
+      setUserAndLoading(user, false);
+      throw new Error(error);
     }
   };
+
+  useEffect(() => {
+    const unsubscribe = firebaseAuth.onAuthStateChanged(async (data) => {
+      setUserAndLoading(data, false);
+    });
+
+    return () => unsubscribe();
+  }, []);
 
   const data = useMemo(
-    () => ({
-      user,
-      loading,
-      signin,
-      signout,
-    }),
+    () => ({ user, loading, signin, signout }),
     [user, loading],
   );
 
