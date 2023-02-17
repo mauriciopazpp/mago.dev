@@ -1,0 +1,95 @@
+$bannerHeight: 400px;
+$bannerRow: 340px;
+
+.home {
+    height: 100vh;
+}
+
+.banner {
+    padding-top: 20px;
+    height: $bannerHeight;
+    overflow: hidden;
+
+    &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: $bannerHeight;
+        background: linear-gradient(#b858199f, #0d111700);
+        clip-path: circle(30% at right 70%);
+        z-index: 0;
+    }
+    
+    &:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: $bannerHeight;
+        background: linear-gradient(#b858199f, #0d111700);
+        clip-path: circle(40% at 10% 10%);
+        z-index: 0;
+    }
+        
+    .logo {
+        align-items: center;
+        height: 100%;
+        z-index: 80;
+        position: relative;
+    }
+
+    .container {
+        z-index: 80;
+        position: relative;
+
+        .banner-row {
+            display: flex;
+            align-items: center;
+            align-content: center;
+            height: $bannerRow;
+        }
+
+        .banner-right {
+            > img {
+                position: absolute;
+                width: 100%;
+                margin-top: 20px;
+            }
+        }
+
+        .banner-left {
+            display: grid;
+
+            > span, > h5 {
+                margin: 10px 0;
+            }
+        }
+
+        .btn-cta {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            display: inline;
+        }
+    }
+}
+
+.home-sky {
+    //background: url(/images/sky.png) 0% 0% / 32px 100%;
+    height: 100%;
+}
+
+@media (max-width: 570px) {
+    .banner .container .banner-left {
+        display: grid;
+        justify-content: center;
+        justify-items: center;
+
+        h5 {
+            text-align: center;
+        }
+    }
+}

@@ -4,7 +4,7 @@ import SignIn from '@/components/Topbar/SignIn';
 const magoImg = '/images/magodev-light.png';
 const rabbitImg = '/images/rabbit.png';
 
-function Topbar() {
+function Topbar({ page }) {
   return (
     <nav className="mago-topbar container-fluid navbar navbar-light bg-dark">
       <div className="container-fluid">
@@ -16,13 +16,15 @@ function Topbar() {
             height={40}
             className="mago-navbar-logo d-inline-block align-text-top"
           />
-          <Image
-            src={magoImg}
-            alt="Go to homepage"
-            width={200}
-            height={40}
-            className="d-inline-block align-text-top"
-          />
+          {page !== 'home' ? (
+            <Image
+              src={magoImg}
+              alt="Go to homepage"
+              width={200}
+              height={40}
+              className="d-inline-block align-text-top"
+            />
+          ) : null}
         </a>
         <SignIn />
       </div>
